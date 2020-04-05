@@ -1,3 +1,11 @@
 # hikmatfarhat-ndu.github.io
 
-[Github](http://github.com)
+Below are the pages for the courses i am teaching.
+
+[CSC213](/csc213/)
+
+[CSC311](/csc311/)
+
+[CSC325](/csc311/)
+
+[CSC414](/csc311/)
