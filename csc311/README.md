@@ -1,3 +1,5 @@
+# Updated grade distribution for CSC311 Spring 2020
+
 Since we cannot do exams your final grade distribution will be as follows
 1. Exam1 (already done) worth 30% of your final grade.
 
