@@ -13,9 +13,10 @@
 1. Hardware vs software virt.
 1. Examples 
 
-## Distributed file systems
-1. What is it and advantages
-1. How does it work
+## Distributed shared memory and  file systems
+1. Wh  do we need it 
+1. share memory. How does it work
+1. file systems. How does it work
 1. Examples
 
 ## Real-time OS
@@ -23,6 +24,12 @@
 1. How does it work
 1. Challenges
 1. Example
+
+# Map reduce system
+1. What is it and how does it work
+1. Advantage.
+1. Who currently uses it and why
+
 
 
  
