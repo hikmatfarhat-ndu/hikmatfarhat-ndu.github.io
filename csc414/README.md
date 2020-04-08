@@ -30,9 +30,14 @@
 1. Advantage.
 1. Who currently uses it and why
 
-# Randomize address space
+# Randomized address space
 1. What problem does it solve
 1. List of OSs that implements it
 1. Limitations
+
+# Access Control in OS
+1. Mandatory access control
+1. Security Enhanced Linux
+1. QubeOS
 
  
