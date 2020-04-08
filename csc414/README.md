@@ -30,6 +30,9 @@
 1. Advantage.
 1. Who currently uses it and why
 
-
+# Randomize address space
+1. What problem does it solve
+1. List of OSs that implements it
+1. Limitations
 
  
