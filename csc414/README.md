@@ -1,6 +1,5 @@
 # CSC414 Operating Systems
 
-## Shared Memory Multiprocessor OS
 
 ## OS Architectures
  1. Exokernel vs microkernel vs monolithic
