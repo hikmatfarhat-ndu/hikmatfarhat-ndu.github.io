@@ -1,6 +1,6 @@
 # Hikmat Farhat, Notre Dame University-Louaize
 
-[CSC 313](https://github.com/hikmatfarhat-ndu/csc313-lectures.git)
+Data Structures Lectures [CSC 313](https://github.com/hikmatfarhat-ndu/csc313-lectures.git)
 <!-- If your are my student this semster below are the links that 
 contain information about the courses i am teaching
 
