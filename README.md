@@ -1,6 +1,7 @@
 # Hikmat Farhat, Notre Dame University-Louaize
 
-If your are my student this semster below are the links that 
+[CSC 313](https://github.com/hikmatfarhat-ndu/csc313-lectures.git)
+<-- If your are my student this semster below are the links that 
 contain information about the courses i am teaching
 
 1. Program Design and Data Abstraction II [CSC213](/csc213/)
@@ -9,4 +10,4 @@ contain information about the courses i am teaching
 
 1. Analysis of Algorithms [CSC325](/csc325/)
 
-1. Operating Systems [CSC414](/csc414/)
+1. Operating Systems [CSC414](/csc414/) -->
