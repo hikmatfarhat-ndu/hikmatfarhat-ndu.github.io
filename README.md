@@ -1,4 +1,4 @@
-# Hikmat Farhat, Notre Dame University-Louaize
+# Data Structures
 
 Data Structures Lectures [CSC 313](csc313/README.md)
 
