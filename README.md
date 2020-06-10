@@ -7,7 +7,7 @@ contain information about the courses i am teaching
 
 1. Program Design and Data Abstraction II [CSC213](/csc213/)
 
-1. Theorey of Computation [CSC311](/csc311/)
+1. Theory of Computation [CSC311](/csc311/)
 
 1. Analysis of Algorithms [CSC325](/csc325/)
 
