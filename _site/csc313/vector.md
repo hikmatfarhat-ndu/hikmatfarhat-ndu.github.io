@@ -4,6 +4,7 @@ Many of the data structures that we will be studying and implementing are alread
 A vector is basically a dynamic array. We can add and remove elements from it and it auto resizes itself. Since we would like to store any type of objects in a vector the implementation uses templates to pass any type to the vector. A vector has the all usual syntax of arrays, specifically the indexing.
 
 ```
+#include <iostream>
 #include <vector>
 int main(){
     //declare a vector of int. creates an empty vector
@@ -22,11 +23,10 @@ int main(){
     //print all elements using range-based for loop
     for(auto x:v)
         std::cout<<x<< ",";
-    std::cout<<"\n";
-
-    
+    std::cout<<"\n";   
 }
 ```
+You can try the code [here](https://repl.it/@hfarhat/vector-ex1)
 The ```push_back``` member function adds an element at the end of the vector. Above we have used two features from c++11: auto and range-based for loops. As you can see we can create a vector of any type (note the syntax). 
 **Note**: since the type of an auto variable is inferred by the compiler it cannot be used with _uninitialized_ variables.
 ```
@@ -232,8 +232,9 @@ ctor
 copy ctor
 copy ctor
 copy ctor
+...
 ```
-
+You can try the code [here](https://repl.it/@hfarhat/vector-ex2)
 Obviously there are two calls for the constructor for a and b. The method push_back saves a __copy__ of the input hence the two calls for the copy constructor. The third call for the copy constructor is because the vector was resized to accommodate b.
 
 Sometimes it is useful to preallocate memory to minimize the number of copy operations when the vector is resized. There are two ways of doing this.
@@ -495,6 +496,7 @@ Let us use a back_insert_iterator to filter all even numbers from a container. N
     }
 
 ```
+[code](https://repl.it/@hfarhat/stdaccumulate)
 <!-- ![](step1.png)
 ![](step2.png)
 ![](step3.png)

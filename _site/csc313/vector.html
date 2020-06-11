@@ -45,7 +45,8 @@
 <h1 id="vector-container">Vector container</h1>
 <p>A vector is basically a dynamic array. We can add and remove elements from it and it auto resizes itself. Since we would like to store any type of objects in a vector the implementation uses templates to pass any type to the vector. A vector has the all usual syntax of arrays, specifically the indexing.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;vector&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
 int main(){
     //declare a vector of int. creates an empty vector
     std::vector&lt;int &gt; v;
@@ -63,12 +64,11 @@ int main(){
     //print all elements using range-based for loop
     for(auto x:v)
         std::cout&lt;&lt;x&lt;&lt; ",";
-    std::cout&lt;&lt;"\n";
-
-    
+    std::cout&lt;&lt;"\n";   
 }
 </code></pre></div></div>
-<p>The <code class="language-plaintext highlighter-rouge">push_back</code> member function adds an element at the end of the vector. Above we have used two features from c++11: auto and range-based for loops. As you can see we can create a vector of any type (note the syntax). 
+<p>You can try the code <a href="https://repl.it/@hfarhat/vector-ex1">here</a>
+The <code class="language-plaintext highlighter-rouge">push_back</code> member function adds an element at the end of the vector. Above we have used two features from c++11: auto and range-based for loops. As you can see we can create a vector of any type (note the syntax). 
 <strong>Note</strong>: since the type of an auto variable is inferred by the compiler it cannot be used with <em>uninitialized</em> variables.</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auto x;//error
 auto y=1;//OK
@@ -261,9 +261,10 @@ ctor
 copy ctor
 copy ctor
 copy ctor
+...
 </code></pre></div></div>
-
-<p>Obviously there are two calls for the constructor for a and b. The method push_back saves a <strong>copy</strong> of the input hence the two calls for the copy constructor. The third call for the copy constructor is because the vector was resized to accommodate b.</p>
+<p>You can try the code <a href="https://repl.it/@hfarhat/vector-ex2">here</a>
+Obviously there are two calls for the constructor for a and b. The method push_back saves a <strong>copy</strong> of the input hence the two calls for the copy constructor. The third call for the copy constructor is because the vector was resized to accommodate b.</p>
 
 <p>Sometimes it is useful to preallocate memory to minimize the number of copy operations when the vector is resized. There are two ways of doing this.</p>
 <ol>
@@ -517,10 +518,11 @@ There is a convenient back_insert_iterator that automatically calls the push_bac
     }
 
 </code></pre></div></div>
+<p><a href="https://repl.it/@hfarhat/stdaccumulate">code</a>
 <!-- ![](step1.png)
 ![](step2.png)
 ![](step3.png)
-![](step4.png) -->
+![](step4.png) --></p>
 
 
   </div>
