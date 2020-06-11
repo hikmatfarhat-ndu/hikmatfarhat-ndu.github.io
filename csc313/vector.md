@@ -388,9 +388,75 @@ The second, more efficient way is to use the std::remove_if then erase. The func
     std::cout << "----done searching\n";
 }
 
+```
+
+### accumulate
+
+The standard fold operation in functional languages is implemented using the std::accumulate function. It takes a range (i.e. start and end iterators) and an initial value (usually zero). By default accumulate adds all the numbers in the range. so
+```
+std::accumulate(start,end,init);
+```
+is equivalent to
+```
+std::accumulate(start,end,init,std::plus{});
+```
+This means we can change the default behavior by supplying our own function. Accumulate works by repeatedly calling (default case plus) the function on the current element and the accumulated value starting with *start and init. The example below multiplies all the elements of the vector.
+```
+std::vector<int> v {1,2,3,4};
+auto res=std::accumulate(v.begin(),v.end(),1,std::multiplies{});
+```
+A more complicate example is shown below where we add the even and odd numbers separately. 
+```
+ {
+     std::random_device e;
+     std::uniform_int_distribution<> dist(1, 10);
+     const int n = 10;
+     std::vector<int> v(n);
+     std::generate(v.begin(), v.end(), [&]() {return dist(e); });
+     for (auto& x : v)
+         std::cout << x << ",";
+     std::cout << std::endl;
+    
+     const auto result = std::accumulate(v.begin(), v.end(), std::make_pair(0, 0),
+         [](std::pair<int,int> sum,int n) {
+             n % 2 == 1?sum.first += n:sum.second += n;
+             return sum;
+         });
+     auto [x, y] = result;
+     std::cout << x << "," << y << std::endl;
+
+ }
+ ```
+
+ 
+## Extra
+We give here a more complicated example of the remove/erase idiom. Suppose that we have a vector of strings and some of them are empty. This typically occurs when reading some delimited data from a file in which some of the fields are empty. Suppose further that we want to remove all __all_blank__ strings from the vector. Below is the code to do just that.
+First note the definition of the filter lambda: it returns true when the input is a blank character. The filter is used in the lambda res which returns an iterator to the first character that is __not__ blank. If all characters are blank res returns the end() iterator.
 
 ```
-## Extra
+    std::vector<std::string> vs{ "hi","  ","there","hello","  ","welcome","  ","end"};
+    auto filter = [](auto c) {return c == ' ' ? true : false; };
+    auto res = [&](auto& x) {return std::find_if_not(x.begin(), x.end(), filter); };
+
+    std::remove_if(vs.begin(), vs.end(), [&](auto& is) { return res(is)== is.end(); });
+  
+    for (auto& c : vs)
+        std::cout << c << ",";
+    std::cout<<std::endl;
+```
+You can run the above code [here](https://repl.it/@hfarhat/remove-blank-strings). Notice how some of the all blank strings become empty. This is the result of using move semantics.
+For example
+```
+std::string s {"test"};
+std::string u=std::move(s);
+std::cout<<"("<<u<<")";
+std::cout<<"("<<s<<")";
+
+```
+
+You can try this code [here](https://repl.it/@hfarhat/move-string). As you can see _u_ "steals" the resources of _s_, i.e. its characters. When we don't use std::move then _u_ would be a copy of _s_. Actually, std::move is just static cast to an rvalue reference.
+
+### transform
 
 One of the most useful STL functions is std::transform. It is similar to the map function in functional languages (and Python). It takes
 1. A source range, defined by start and end iterators

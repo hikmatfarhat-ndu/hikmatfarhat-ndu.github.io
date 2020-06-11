@@ -28,7 +28,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/csc313/README.html">Lectures</a><a class="page-link" href="/about/">About</a></div>
+        <div class="trigger"><a class="page-link" href="/csc313/README.html">Lectures</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/csc313/c++review.html">variables, references and pointers</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -413,9 +413,68 @@ std::cout &lt;&lt; "----done searching\n";
     std::cout &lt;&lt; "----done searching\n";
 }
 
+</code></pre></div></div>
+
+<h3 id="accumulate">accumulate</h3>
+
+<p>The standard fold operation in functional languages is implemented using the std::accumulate function. It takes a range (i.e. start and end iterators) and an initial value (usually zero). By default accumulate adds all the numbers in the range. so</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>std::accumulate(start,end,init);
+</code></pre></div></div>
+<p>is equivalent to</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>std::accumulate(start,end,init,std::plus{});
+</code></pre></div></div>
+<p>This means we can change the default behavior by supplying our own function. Accumulate works by repeatedly calling (default case plus) the function on the current element and the accumulated value starting with *start and init. The example below multiplies all the elements of the vector.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>std::vector&lt;int&gt; v {1,2,3,4};
+auto res=std::accumulate(v.begin(),v.end(),1,std::multiplies{});
+</code></pre></div></div>
+<p>A more complicate example is shown below where we add the even and odd numbers separately.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {
+     std::random_device e;
+     std::uniform_int_distribution&lt;&gt; dist(1, 10);
+     const int n = 10;
+     std::vector&lt;int&gt; v(n);
+     std::generate(v.begin(), v.end(), [&amp;]() {return dist(e); });
+     for (auto&amp; x : v)
+         std::cout &lt;&lt; x &lt;&lt; ",";
+     std::cout &lt;&lt; std::endl;
+    
+     const auto result = std::accumulate(v.begin(), v.end(), std::make_pair(0, 0),
+         [](std::pair&lt;int,int&gt; sum,int n) {
+             n % 2 == 1?sum.first += n:sum.second += n;
+             return sum;
+         });
+     auto [x, y] = result;
+     std::cout &lt;&lt; x &lt;&lt; "," &lt;&lt; y &lt;&lt; std::endl;
+
+ }
+</code></pre></div></div>
+
+<h2 id="extra">Extra</h2>
+<p>We give here a more complicated example of the remove/erase idiom. Suppose that we have a vector of strings and some of them are empty. This typically occurs when reading some delimited data from a file in which some of the fields are empty. Suppose further that we want to remove all <strong>all_blank</strong> strings from the vector. Below is the code to do just that.
+First note the definition of the filter lambda: it returns true when the input is a blank character. The filter is used in the lambda res which returns an iterator to the first character that is <strong>not</strong> blank. If all characters are blank res returns the end() iterator.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    std::vector&lt;std::string&gt; vs{ "hi","  ","there","hello","  ","welcome","  ","end"};
+    auto filter = [](auto c) {return c == ' ' ? true : false; };
+    auto res = [&amp;](auto&amp; x) {return std::find_if_not(x.begin(), x.end(), filter); };
+
+    std::remove_if(vs.begin(), vs.end(), [&amp;](auto&amp; is) { return res(is)== is.end(); });
+  
+    for (auto&amp; c : vs)
+        std::cout &lt;&lt; c &lt;&lt; ",";
+    std::cout&lt;&lt;std::endl;
+</code></pre></div></div>
+<p>You can run the above code <a href="https://repl.it/@hfarhat/remove-blank-strings">here</a>. Notice how some of the all blank strings become empty. This is the result of using move semantics.
+For example</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>std::string s {"test"};
+std::string u=std::move(s);
+std::cout&lt;&lt;"("&lt;&lt;u&lt;&lt;")";
+std::cout&lt;&lt;"("&lt;&lt;s&lt;&lt;")";
 
 </code></pre></div></div>
-<h2 id="extra">Extra</h2>
+
+<p>You can try this code <a href="https://repl.it/@hfarhat/move-string">here</a>. As you can see <em>u</em> “steals” the resources of <em>s</em>, i.e. its characters. When we don’t use std::move then <em>u</em> would be a copy of <em>s</em>. Actually, std::move is just static cast to an rvalue reference.</p>
+
+<h3 id="transform">transform</h3>
 
 <p>One of the most useful STL functions is std::transform. It is similar to the map function in functional languages (and Python). It takes</p>
 <ol>
