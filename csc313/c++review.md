@@ -1,4 +1,3 @@
-# variables, references and pointers
 
 When we define (declare) a variable the system reserves space in memory to store the value associated with that variable. This is the reason why we need to specify the type of the variable since the required space depends on it. For example (typically), an ```int``` and ```float``` need 4 bytes whereas ```long``` and ```double``` need 8 bytes. Because every variable is associated with a location in memory we can determine the memory address where the variable is located using the & operator. Note that the & operator can have different meaning depending on context.
 ## Variables and references

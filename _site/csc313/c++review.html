@@ -3,19 +3,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>variables, references and pointers | Hikmat Farhat. Course resourses</title>
+<title>Hikmat Farhat. Course resourses | Currently contains lecture notes (programming) part of CSC313</title>
 <meta name="generator" content="Jekyll v3.8.7" />
-<meta property="og:title" content="variables, references and pointers" />
+<meta property="og:title" content="Hikmat Farhat. Course resourses" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Currently contains lecture notes (programming) part of CSC313" />
 <meta property="og:description" content="Currently contains lecture notes (programming) part of CSC313" />
-<link rel="canonical" href="/csc313/c++review.html" />
-<meta property="og:url" content="/csc313/c++review.html" />
+<link rel="canonical" href="http://localhost:4000/csc313/c++review.html" />
+<meta property="og:url" content="http://localhost:4000/csc313/c++review.html" />
 <meta property="og:site_name" content="Hikmat Farhat. Course resourses" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"/csc313/c++review.html","headline":"variables, references and pointers","description":"Currently contains lecture notes (programming) part of CSC313","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/csc313/c++review.html","headline":"Hikmat Farhat. Course resourses","description":"Currently contains lecture notes (programming) part of CSC313","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Hikmat Farhat. Course resourses" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hikmat Farhat. Course resourses" /></head>
 <body><header class="site-header" role="banner">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">Hikmat Farhat. Course resourses</a><nav class="site-nav">
@@ -28,7 +28,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/csc313/README.html">Lectures</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/csc313/c++review.html">variables, references and pointers</a></div>
+        <div class="trigger"><a class="page-link" href="/csc313/README.html">Lectures</a><a class="page-link" href="/about/">About</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -36,12 +36,11 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">variables, references and pointers</h1>
+    <h1 class="post-title"></h1>
   </header>
 
   <div class="post-content">
-    <h1 id="variables-references-and-pointers">variables, references and pointers</h1>
-
+    
 <p>When we define (declare) a variable the system reserves space in memory to store the value associated with that variable. This is the reason why we need to specify the type of the variable since the required space depends on it. For example (typically), an <code class="language-plaintext highlighter-rouge">int</code> and <code class="language-plaintext highlighter-rouge">float</code> need 4 bytes whereas <code class="language-plaintext highlighter-rouge">long</code> and <code class="language-plaintext highlighter-rouge">double</code> need 8 bytes. Because every variable is associated with a location in memory we can determine the memory address where the variable is located using the &amp; operator. Note that the &amp; operator can have different meaning depending on context.</p>
 <h2 id="variables-and-references">Variables and references</h2>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;iostream&gt;
