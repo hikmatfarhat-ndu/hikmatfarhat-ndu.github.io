@@ -1,8 +1,0 @@
----
-layout: post
-title:  "Lecture updates"
-date:   2020-06-12 20:48:31 +0300
-categories: lectures 
----
-
-Just updated the vector lecture and added c++review
