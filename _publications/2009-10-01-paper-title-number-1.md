@@ -6,7 +6,8 @@ permalink: /publication/2009-10-01-paper-title-number-1
 date: 2020-10-01
 venue: 'IEEE Transactions on Automatic Control'
 paperurl: 'https://ieeexplore.ieee.org/document/8972367'
-#citation: 'Hikmat Farhat, You. (2020). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+title: "Control of Nondeterministic Systems for Bisimulation Equivalence Under Partial Information"
+citation: 'Hikmat Farhat (2020). &quot;&quot; <i>IEEE Transactions on Automatic Control</i>.'
 ---
 In this paper we investigate the synthesis of a (possibly nondeterministic) supervisor, 
 with partial information, such that the controlled nondeterministic plant is bisimulation 
