@@ -3,9 +3,6 @@ permalink: /
 title: "Hikmat Farhat, Notre Dame University-Louaize"
 excerpt: ""
 author_profile: true
-redirect_from: 
-  - /index/
-  - /index.html
 ---
 
 I am a Professor of Computer Science at Notre Dame-Louaize, Lebanon. This site contains most of the
