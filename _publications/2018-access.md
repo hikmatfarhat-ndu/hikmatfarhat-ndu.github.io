@@ -1,7 +1,7 @@
 ---
-title: "Paper Title Number 3"
+title: "Web Service Composition via Supervisory Control Theory"
 collection: publications
-permalink: /publication/2015-10-01-paper-title-number-3
+permalink: /publication/2018-access
 #excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
 date: 2018-10-01
 venue: 'IEEE Access'
