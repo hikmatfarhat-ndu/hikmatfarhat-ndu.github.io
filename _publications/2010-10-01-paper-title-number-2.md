@@ -2,7 +2,7 @@
 title: "Composition of Partially-Observable Services"
 collection: publications
 permalink: /publication/2019-comp-partial-1
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
+#excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
 date: 2019-01-01
 venue: 'IEEE Access '
 paperurl: 'https://ieeexplore.ieee.org/document/8571226'
